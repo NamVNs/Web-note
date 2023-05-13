@@ -1,2 +1,2 @@
 # Web-note
-Ghi Chus
+full source trang web ghi chú với nodejs
