@@ -528,8 +528,8 @@ setInterval(function() {
 
 function check_signin(req, name) {
     let cookie = utils.cookieStringToObject(req.headers.cookie);
-    let findAccount = db.account.find($=>$.name == cookie.name);
-    let findAccount_ = db.account.find($=>$.name == name);
+    let findAccount = db.account?.find($=>$.name == cookie.name); if (!findAccount)return false;
+    let findAccount_ = db.account?.find($=>$.name == name);
 
     if (!!name && !!findAccount_ && (name != cookie.name || cookie.password != findAccount_.password))return false;
     if (!findAccount || cookie.password != findAccount.password)return false;
